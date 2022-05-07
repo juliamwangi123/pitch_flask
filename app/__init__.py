@@ -11,4 +11,4 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 #shows path to static file
-from app import route,models
+from app import route,views
