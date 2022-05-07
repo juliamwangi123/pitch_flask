@@ -13,6 +13,22 @@
     {%endif%}
 </head>
 <body>
+  
+    <nav class="navbar navbar-light bg-info">
+        <div>
+          <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
     
+        </div>
+           
+    </nav>
+
+
+    <section>
+        {%block content%}
+        {%endblock content%}
+    </section>
 </body>
 </html>
+
+
+         
