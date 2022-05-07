@@ -1,19 +1,31 @@
-import email
-from xmlrpc.client import Boolean
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField,SubmitField, BooleanField
-from wtforms.validators import DataRequired,Length,Email,EqualTo
+from wtforms import StringField,PasswordField,SubmitField,BooleanField
+from wtforms.validators import DataRequired,Length,EqualTo,Email,ValidationError
+# from  app.models import User
 
-class Regestration(FlaskForm):
-    username=StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    email=StringField('Email', validators=[DataRequired(),Email()])
-    password=PasswordField('Password', validators=[DataRequired()])
-    confirm_password=PasswordField('Confirm Password', validators=[DataRequired(),EqualTo('password')])
-    submit=SubmitField('Register')
+class RegistrationForm(FlaskForm):
+    username = StringField("Username", validators=[DataRequired(), Length(min=3 , max=10)])
+    email =StringField("Email", validators=[DataRequired(), Email()])
+    password=PasswordField("Password", validators=[DataRequired()])
+    confirm_password= PasswordField("Confirm Password", validators=[DataRequired(),EqualTo('password')])
+    submit =SubmitField("Sign In")
 
 
-class Login(FlaskForm):
-    email=StringField('Email', validators=[DataRequired(), Email()])
-    password=PasswordField('Password', validators=[DataRequired()])
-    remember=BooleanField('Remember Me?')
-    submit=SubmitField('Login')
+    # def validate_username(self ,username):
+    #     user=User.query.filter_by(username=username.data).first()
+    #     if user is not None:
+    #         raise ValidationError('Username exist')
+
+    # def validate_email(self, email):
+    #     user=User.query.filter_by(email=email.data).first()
+    #     if user is not None:
+    #         raise ValidationError('Email exist')
+
+
+
+
+class LoginForm(FlaskForm):
+    email =StringField("Email", validators=[DataRequired(), Email()])
+    password= PasswordField("Password", validators=[DataRequired()])
+    remember=BooleanField("Remember me?")
+    submit=SubmitField("Login in")
