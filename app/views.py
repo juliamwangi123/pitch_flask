@@ -10,7 +10,7 @@ from app import db
 
 from flask_login import login_required
 
-
+#this oute lead to home page and one can only view it when logged in
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -31,7 +31,16 @@ def index():
 
 
 
-
+#this route leads to  user profile page and also requires user to login first
+@app.route('/profile/<username')
+@login_required
+def profile(username):
+    user=User.query.filter_by(username=username).first_or_404()
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template('profile.html', user=user, posts=posts)
 
 
 
