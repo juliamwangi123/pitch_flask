@@ -6,6 +6,7 @@ from flask import render_template, request,flash,redirect,url_for,request
 from app.models import User 
 from werkzeug.urls import url_parse
 from app import db
+from datetime import datetime
 
 
 from flask_login import login_required
@@ -87,3 +88,11 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.now()
+        db.session.commit()
