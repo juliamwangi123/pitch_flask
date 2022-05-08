@@ -1,4 +1,5 @@
 from datetime import datetime
+from email.policy import default
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -10,6 +11,8 @@ class User(UserMixin,db.Model):
     username=db.Column(db.String(120),unique=True, index=True)
     email=db.Column(db.String(120), index=True, unique=True)
     password_hash=db.Column(db.String(120))
+    about_me=db.Column(db.String(120))
+    last_seen=db.column(db.DateTime, default=datetime.now)
     pitch=db.relationship('Pitch' , backref='author',lazy='dynamic')
 
 
