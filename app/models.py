@@ -3,7 +3,7 @@ from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
-
+from hashlib import md5
 
 class User(UserMixin,db.Model):
     id=db.Column(db.Integer ,primary_key=True)
@@ -13,7 +13,10 @@ class User(UserMixin,db.Model):
     pitch=db.relationship('Pitch' , backref='author',lazy='dynamic')
 
 
-
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
+            digest, size)
 
             #passowrd hahing
 
@@ -33,8 +36,11 @@ class User(UserMixin,db.Model):
 def load_user(id):
     return User.query.get(int(id))
     
-
-
+#generetaes user profile
+def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
+            digest, size)
 
 
 
