@@ -1,8 +1,9 @@
 {%extends 'base.html'%}
 {%block content%}
+<h1>Hi, {{ current_user.username }}!</h1>
+
 {% for post in posts%}
     <div>
-        <h1>Hi, {{ current_user.username }}!</h1>
         <p>{{post.author.username}} says</p>
         <p>{{post.body}}</p>
     </div>
