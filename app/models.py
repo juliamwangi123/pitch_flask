@@ -1,6 +1,6 @@
 from datetime import datetime
-from email.policy import default
 from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model):
     id=db.Column(db.Integer ,primary_key=True)
