@@ -13,4 +13,4 @@ migrate = Migrate(app, db)
 login =LoginManager(app)
 login.login_view = 'login'
 #shows path to static file
-from app import route,views,models
+from app import views,models

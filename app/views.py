@@ -32,7 +32,7 @@ def index():
 
 
 #this route leads to  user profile page and also requires user to login first
-@app.route('/profile/<username')
+@app.route('/profile/<username>')
 @login_required
 def profile(username):
     user=User.query.filter_by(username=username).first_or_404()
