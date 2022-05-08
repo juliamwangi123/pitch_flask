@@ -1,4 +1,5 @@
-import email
+from datetime import datetime
+from email.policy import default
 from app import db
 
 class User(db.Model):
@@ -11,3 +12,12 @@ class User(db.Model):
     def __repr__(self):
         return '<User {} >'.format(self.username)
 
+
+class Pitch(db.Model):
+    id=db.Column(db.Integer, primary_key=True)
+    body=db.Column(db.String(300))
+    timestamp=db.Column(db.DateTime, index=True, default=datetime.now)
+
+
+    def __repr__(self):
+        return '<body {}'.format(self.body)
