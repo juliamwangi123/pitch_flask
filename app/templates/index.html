@@ -4,6 +4,7 @@
 
 {% for post in posts%}
     <div>
+        <h4>Title:{{post.title}}</h4>
         <p>{{post.author.username}} says</p>
         <p>{{post.body}}</p>
     </div>
