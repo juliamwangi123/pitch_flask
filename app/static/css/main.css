@@ -1,107 +1,184 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-    background: #fafafa;
-    color: #333333;
-    /* margin-top: 5rem; */
+  background:rgb(133 135 156);
+  color: #333333;
+  /* margin-top: 5rem; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+} */
+
+/* .bg-steel {
+  background-color: #5f788a;
+} */
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+/* .content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+} */
+
+.article-title {
+  color: #444444;
+}
+
+/* a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+} */
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.content-section{
+    width: 40%;
+    height: 70%;
+}
+
+nav{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #444444;
-  }
-  
-  .bg-steel {
-    background-color: #5f788a;
-  }
-  
-  .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
-  }
-  
-  .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-  }
-  
-  .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
-  }
-  
-  .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-  }
-  
-  .article-title {
-    color: #444444;
-  }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
-  .article-content {
-    white-space: pre-line;
-  }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
-  .account-img {
-    height: 125px;
-    width: 125px;
+    justify-content: space-between;
+    background-color: #428bca;
+    height: 40px;
+    align-items: center;
+
+   
+}
+
+nav a{
+    color:white!important;
+    font-size: 13px;
+
+}
+
+nav .end{
     margin-right: 20px;
-    margin-bottom: 16px;
-  }
+}
+
+.loginform{
+  height: 75vh;
+  width: 80%;
+  position: relative;
+  left:10%;
+  margin-top: 60px;
+  display: flex;
+
+}
+
+.left{
+  width: 30%;
+  height: 100%;
+  background: #545871;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+form{
+  width: 70%;
+  background-color: #f7ecea;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+.form-control{
+  height: 40px;
+  width: 90%;
+  margin-left: 20px;
+}
+
+
+
+.form-control-label{
+  margin-left: 20px;
+
+}
+
+.remember{
+  margin-left: 20px;
+  color: #8a8798;
+}
+
+.btn{
+  margin: 20px;
+  border: 1px solid #545871;
+  color: #8a8798;
+}
+
+.red{
+  margin: 20px;
+  font-size: 13px;
+  color: #8a8798;
   
-  .account-heading {
-    font-size: 2.5rem;
-  }
+}
 
-  .content-section{
-      width: 40%;
-      height: 70%;
-  }
+legend{
+  color: #8a8798;
+  font-weight: 400;
+}
 
-  nav{
-      display: flex;
-      justify-content: space-between;
-      background-color: #428bca;
-      height: 50px;
-      align-items: center;
+.form-group{
+  color: #8a8798;
+  font-weight: 400;
+}
 
-     
-  }
 
-  nav a{
-      color:white!important;
-
-  }
-
-  nav .end{
-      margin-right: 20px;
-  }
