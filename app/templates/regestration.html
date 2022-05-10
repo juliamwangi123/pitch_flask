@@ -3,7 +3,15 @@
 {% extends 'base.html'%} 
 {% block content %}
 <!-- reg form goes in here -->
-        <div class="content-section">
+        <div class="content-section loginform">
+            <div class='left'>
+                <!-- <div class="logoContainer">
+                    <div class="logo"></div>
+                    <p>PitchIt</p>
+                </div> -->
+                <img src="../static/img/Pitch Logo Animation.gif" alt="">
+    
+            </div>
             <form action="" method="POST" novalidate >
                 {{form.hidden_tag()}}
 
@@ -74,17 +82,23 @@
                         </div>
 
                 </fieldset>
-                <div class="form-group">
+                <div class="form-group  downreg">
                     {{form.submit(class="btn btn-outline-info")}}
+                    <small>
+                        Already have an Account? <a href="{{url_for('login')}}"> Login here</a>
+                    </small>
+                    
                 </div>
+                        
+                            
+                        
+                        
+                
+
+            
             </form> 
 
 
-
         </div>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already have an Account? <a href="{{url_for('login')}}"> Login here</a>
-            </small>
-        </div>
+        
 {% endblock content%}
