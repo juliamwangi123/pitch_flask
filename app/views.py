@@ -50,6 +50,7 @@ def profile(username):
         {'author': user, 'body': 'Test post #1'},
         {'author': user, 'body': 'Test post #2'}
     ]
+    posts = user.pitch.order_by(Pitch.timestamp.desc())
     return render_template('profile.html', user=user, posts=posts)
 
 
