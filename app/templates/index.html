@@ -49,7 +49,7 @@
 {% for post in posts%}
     <div>
         <h4>Title:{{post.title}}</h4>
-        gh
+        <img src="{{ post.author.avatar(36) }}">
         <p>{{post.author.username}} says</p>
         <p>{{post.body}}</p>
     </div>
