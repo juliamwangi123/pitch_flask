@@ -213,6 +213,63 @@ legend{
   font-weight: 400;
 }
 
+.post{
+  position: relative;
+  width: 50%;
+  margin: 10px;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter:blur(16px);
 
+}
+.index{
+  background-color: #f7ecea;
+  height: 100%;
+  width: 100%;
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 
+}
+.top{
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+}
+ .top p{
+   margin-left: 9px;
+   font-weight: 600;
+   margin-top: 10px;
+ }
 
+ .bottom{
+   position: relative;
+   left: 10%;
+
+ }
+
+ .title{
+   font-weight: 800;
+   position: absolute;
+   left:9%;
+   font-size: 10px;
+   color: blue
+ }
+
+ .edit{
+   border: 1px solid silver;
+   width: 200px;
+   text-align: center;
+   position: relative;
+   left:12%;
+   top: 5%;
+   border-radius: 25px;
+   padding: 3px;
+ }
+
+ .edit a{
+  color: white;
+
+ }

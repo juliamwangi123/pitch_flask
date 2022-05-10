@@ -17,13 +17,7 @@ from flask_login import login_required
 @app.route('/index',methods=['GET','POST' ])
 @login_required
 def index():
-    form=newPostForm()
-    if form.validate_on_submit():
-        pitch=Pitch(title=form.title.data, body=form.body.data, user_id=current_user.id)
-        db.session.add(pitch)
-        db.session.commit()
-        flash('post succesfully created', 'success')
-        return redirect(url_for('index'))
+    
         
     posts=Pitch.query.all()
     # posts = [
@@ -36,7 +30,7 @@ def index():
     #         'body': 'The Avengers movie was so cool!'
     #     }
     # ]
-    return render_template('index.html', posts=posts, form=form)
+    return render_template('index.html', posts=posts)
 
 
 
@@ -127,13 +121,13 @@ def edit_profile():
 
 
 
-# @app.route('/newPost' ,methods=['POST' ,'GET'])
-# @login_required
-# def newPost():
-#     form=newPostForm()
-#     if form.validate_on_submit():
-#         pitch=Pitch(title=form.title.data, body=form.body.data, user_id=current_user.id)
-#         db.session.add(pitch)
-#         db.session.commit()
-#         return redirect(url_for('index'))
-#     return  render_template('newPost.html' , form=form)
+@app.route('/newPost' ,methods=['POST' ,'GET'])
+@login_required
+def newPost():
+    form=newPostForm()
+    if form.validate_on_submit():
+        pitch=Pitch(title=form.title.data, body=form.body.data, user_id=current_user.id)
+        db.session.add(pitch)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return  render_template('newPost.html' , form=form)
