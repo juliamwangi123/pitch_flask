@@ -19,12 +19,11 @@
           <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
         </div>
           <div>
-            <a class="navbar-brand" href="{{url_for('regestration')}}">Sign in</a>
             {% if current_user.is_anonymous %}
+            <a class="navbar-brand" href="{{url_for('regestration')}}">Sign in</a>
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}
             <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
-            <a href="{{ url_for('newPost') }}">New Post</a>
 
             <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
