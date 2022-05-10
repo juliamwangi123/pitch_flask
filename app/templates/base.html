@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Libre+Bodoni:wght@500&family=Montserrat+Alternates&family=Montserrat:wght@100&family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     {%if title%}
     <title>{{title}}</title>
     {%else%}
@@ -14,7 +17,7 @@
 </head>
 <body>
     <!-- As a link -->
-<nav class="navbar navbar-light bg-info">
+<nav class="navbar navbar-light ">
     <div>
       <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
 

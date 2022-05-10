@@ -97,16 +97,17 @@ body {
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #428bca;
     height: 40px;
     align-items: center;
+    background-color:#f7ecea!important;
+
 
    
 }
 
 nav a{
-    color:white!important;
-    font-size: 13px;
+    font-size: 13px !important;
+    color: #8a8798 !important;
 
 }
 
@@ -131,12 +132,43 @@ nav .end{
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-
+.left .logoContainer{
+  
+  position: relative;
+  top: 5%;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:#f7ecea;
+  position: absolute;
+  left:25%
+}
+.logoContainer p{
+  color: white;
+  top: 60%;
+  font-family: cursive;
+  font-size: 23px;
+  margin-left: 25px;
+  margin-top: 5px;
+}
 form{
   width: 70%;
   background-color: #f7ecea;
+  background-color: rgba(0, 0,0,);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  backdrop-filter: blur(4px);
+  
+}
+
+.left img{
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 

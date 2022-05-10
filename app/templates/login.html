@@ -2,7 +2,14 @@
 {%block content%}
 
     <div class="content-section loginform">
-        <div class='left'>left</div>
+        <div class='left'>
+            <!-- <div class="logoContainer">
+                <div class="logo"></div>
+                <p>PitchIt</p>
+            </div> -->
+            <img src="{{url_for('static', filename='img/pitch.gif')}}" alt="">
+
+        </div>
         <form method="POST"  action="" novalidate>
             {{form.hidden_tag()}}
             <fieldset class="form-group">
