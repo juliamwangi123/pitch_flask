@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Libre+Bodoni:wght@500&family=Montserrat+Alternates&family=Montserrat:wght@100&family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/02a4bd3e3a.js" crossorigin="anonymous"></script>
+
     {%if title%}
     <title>{{title}}</title>
     {%else%}
@@ -28,8 +30,10 @@
 
         <a class="navbar-brand" href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a class="navbar-brand" href="{{ url_for('logout') }}">Logout</a>
         <a class="navbar-brand" href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
+        <a class="navbar-brand" href="{{ url_for('newPost') }}">New Post</a>
+
+        <a class="navbar-brand" href="{{ url_for('logout') }}">Logout</a>
 
 
         {% endif %}

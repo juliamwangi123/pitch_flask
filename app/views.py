@@ -1,5 +1,4 @@
 import email
-from turtle import title
 from flask_login import current_user, login_user , logout_user 
 from app import app
 from .forms import  RegistrationForm, LoginForm,EditUserProfile,newPostForm
@@ -8,8 +7,6 @@ from app.models import User ,Pitch
 from werkzeug.urls import url_parse
 from app import db
 from datetime import datetime
-
-
 from flask_login import login_required
 
 #this oute lead to home page and one can only view it when logged in
@@ -40,10 +37,6 @@ def index():
 @login_required
 def profile(username):
     user=User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
     posts = user.pitch.order_by(Pitch.timestamp.desc())
     return render_template('profile.html', user=user, posts=posts)
 

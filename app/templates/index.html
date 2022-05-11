@@ -1,11 +1,52 @@
 
 {%extends 'base.html'%}
-<div class="index">
+
+<div class="index"></div>
 
 
 {%block content%}
 
-
+<div class="right">
+    <div class="right1">
+        <h5>People you may Know</h5>
+        <div class="innerRight">
+            <img class="rounded-circle z-depth-2" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+            data-holder-rendered="true">
+            <div class="innerword">
+                <p>Nina Wambui</p>
+                <small>Front end dev</small>
+            </div>
+            <p class="add">+</p>
+        </div>
+        <div class="innerRight">
+            <img class="rounded-circle z-depth-2" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+            data-holder-rendered="true">
+            <div class="innerword">
+                <p>Nina Wambui</p>
+                <small>Front end dev</small>
+            </div>
+            <p class="add">+</p>
+        </div>
+        <div class="innerRight">
+            <img class="rounded-circle z-depth-2" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+            data-holder-rendered="true">
+            <div class="innerword">
+                <p>Nina Wambui</p>
+                <small>Front end dev</small>
+            </div>
+            <p class="add">+</p>
+        </div>
+        <div class="innerRight">
+            <img class="rounded-circle z-depth-2" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+            data-holder-rendered="true">
+            <div class="innerword">
+                <p>Nina Wambui</p>
+                <small>Front end dev</small>
+            </div>
+            <p class="add">+</p>
+        </div>
+    </div>
+</div>
     <h3>Hi, {{ current_user.username }}!</h3>
 
     {% for post in posts%}
@@ -20,6 +61,13 @@
                 <div class="bottom">
                    
                 <p>{{post.body}}</p>
+                <small>posted at:{{post.timestamp.strftime("%Y-%m-%d")}}</small>
+                </div>
+
+                <div class="thumb container">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-circle-trash"></i>
                 </div>
                 
             </div>
@@ -31,4 +79,4 @@
 
     
 </div>
-   
+  

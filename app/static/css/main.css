@@ -5,12 +5,12 @@
 }
 
 body {
-  background:rgb(133 135 156);
-  color: #333333;
+  /* background:rgb(133 135 156); */
   /* margin-top: 5rem; */
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color:#f7ecea
 
 }
 
@@ -215,10 +215,11 @@ legend{
 
 .post{
   position: relative;
-  width: 50%;
+  width: 60%;
   margin: 10px;
-  background: rgba(255, 255, 255, .1);
-  backdrop-filter:blur(16px);
+  position: relative;
+  left: 10%;
+  background-color: white;
 
 }
 .index{
@@ -270,6 +271,81 @@ legend{
  }
 
  .edit a{
-  color: white;
+  color: black
 
  }
+
+ .editform{
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   
+ }
+
+ .thumb{
+   display: flex;
+   justify-content: center;
+ }
+ .thumb i{
+   margin-left: 20px;
+ }
+ 
+h3{
+  position: relative;
+  left: 17%;
+
+}
+ .right{
+   position: absolute;
+   right: 5%;
+   width: 25%;
+   top: 14%;
+   border: 1px solid white;
+   background-color: white;
+
+ }
+
+ 
+ .innerRight{
+   border-top: 1px solid silver;
+   height: 20%;
+   display: flex;
+   position: relative;
+ }
+
+ .innerRight img{
+   height: 80px;
+
+ }
+
+ .innerword{
+   position: relative;
+   left: 8%;
+ }
+
+ .innerword p{
+   position: relative;
+   top: 30%;
+   font-weight: 900;
+ }
+ .add{
+   position: absolute;
+   top: 40%;
+   right:5%;
+   background-color: lightblue;
+   border-radius: 50%;
+   height: 20px;
+   width: 20px;
+   text-align: center;
+   
+ }
+
+ .add p{
+   font-weight: 900;
+ }
+
+ .right1 h5{
+   font-weight: 900;
+   text-align: center;
+   font-size: 18px}

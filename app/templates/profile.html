@@ -6,8 +6,9 @@
             <td><img class="rounded-circle z-depth-2" alt="100x100" src="{{ user.avatar(128) }}"data-holder-rendered="true"></td>
 
             <td><h1>User: {{ user.username }}</h1>
-                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-                {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+                
+                {% if user.about_me %}<p> {{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}<p>Last seen on: {{ user.last_seen.strftime("%Y-%m-%d") }}</p>{% endif %}
             </td>
             
         </tr>
