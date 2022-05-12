@@ -1,4 +1,5 @@
 import email
+from operator import pos
 from flask_login import current_user, login_user , logout_user 
 from app import app
 from .forms import  RegistrationForm, LoginForm,EditUserProfile,newPostForm
@@ -17,16 +18,7 @@ def index():
     
         
     posts=Pitch.query.all()
-    # posts = [
-    #     {
-    #         'author': {'username': 'John'},
-    #         'body': 'Beautiful day in Portland!'
-    #     },
-    #     {
-    #         'author': {'username': 'Susan'},
-    #         'body': 'The Avengers movie was so cool!'
-    #     }
-    # ]
+    
     return render_template('index.html', posts=posts)
 
 
@@ -124,3 +116,33 @@ def newPost():
         db.session.commit()
         return redirect(url_for('index'))
     return  render_template('newPost.html' , form=form)
+
+
+
+@app.route('/pitch/delete/<int:post_id>',methods=['POST', 'GET'])
+@login_required
+def delete_pitch(post_id):
+    posts = Pitch.query.get(post_id)
+    if posts.author == current_user:
+        db.session.delete(posts)
+        db.session.commit()
+        flash('Your pitch has been deleted','success')
+    return redirect(url_for('index'))
+
+
+# @app.route('/technology/<title>' ,methods=['GET' ,'POST'])
+# @login_required
+# def category(title):
+#     posts=Pitch.query.filter_by(title=title)
+#     print(posts)
+#     if title=='technology':
+#     # if posts.title =='technology':
+#         print(posts)
+        
+        
+#         return render_template('tech.html', posts=posts)
+
+       
+
+
+

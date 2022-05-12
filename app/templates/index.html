@@ -51,6 +51,9 @@
     <h3>Hi, {{ current_user.username }}!</h3>
 
     {% for post in posts%}
+
+
+    
             <div class='post'>
                 <small class="title">Follow topic on {{post.title}}</small>
         
@@ -68,7 +71,8 @@
                 <div class="thumb container">
                     <i class="fa-solid fa-thumbs-up"></i>
                     <i class="fa-solid fa-thumbs-down"></i>
-                    <i class="fa-solid fa-circle-trash"></i>
+                    
+                    <i class="fa-solid fa-trash"><a href="{{url_for('delete_pitch', post_id=post.id)}}"></a></i>
                 </div>
                 
             </div>
